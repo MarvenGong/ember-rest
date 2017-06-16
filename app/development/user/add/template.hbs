@@ -1,0 +1,22 @@
+<form action="" id="addUserForm">
+  <table>
+    <tr>
+      <td>Name</td>
+      <td>
+        {{input name='name' id="name"}}
+      </td>
+    </tr>
+    <tr>
+      <td>Age</td>
+      <td>
+        {{input name='age' id="age"}}
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button type="button" {{action 'submitUser' on='click'}}>Submit</button>
+      </td>
+    </tr>
+  </table>
+</form>

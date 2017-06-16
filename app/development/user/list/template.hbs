@@ -1,0 +1,18 @@
+<section>
+  <h2>users {{#link-to 'user.add'}}Add User{{/link-to}}</h2>
+  {{money 250}}
+  <table width="100%" border="1">
+    {{#each model as |user|}}
+      <tr>
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+        <td>
+          <a href="javascript:;" {{action "editUser" user}}>Edit</a>
+          <a href="javascript:;" {{action "deleteUser" user}}>Delete</a>
+        </td>
+      </tr>
+
+    {{/each}}
+  </table>
+
+</section>
