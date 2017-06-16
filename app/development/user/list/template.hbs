@@ -2,6 +2,11 @@
   <h2>users {{#link-to 'user.add'}}Add User{{/link-to}}</h2>
   {{money 250}}
   <table width="100%" border="1">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Action</th>
+    </tr>
     {{#each model as |user|}}
       <tr>
         <td>{{user.name}}</td>
@@ -14,5 +19,5 @@
 
     {{/each}}
   </table>
-
+{{#action-bar actionName="add User"}}{{/action-bar}}
 </section>
