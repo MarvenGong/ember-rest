@@ -12,6 +12,9 @@ Router.map(function() {
     this.route('add',{path:'/add'});
     this.route('edit',{path:'/edit'});
   });
+  this.route('department',{path:'/department'},function(){
+    this.route('list',{path: '/list'});
+  })
   this.route("nav",{path:"/nav"});
 });
 

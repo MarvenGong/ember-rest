@@ -3,10 +3,10 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'demo01',
-    podModulePrefix: 'demo01/development',
+    podModulePrefix: 'demo01/development',//定义扫描的目录
     environment: environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

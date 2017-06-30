@@ -1,0 +1,10 @@
+<div class="dialog-shadow {{if show 'show'}}">
+  <div class="dialog-body">
+    <div class="dialog-content">
+      {{text}}
+    </div>
+    <div class="dialog-actions">
+      <button type="button" {{action "sure"}}>{{sureText}}</button><button type="button" {{action "cancel"}}>{{cancelText}}</button>
+    </div>
+  </div>
+</div>

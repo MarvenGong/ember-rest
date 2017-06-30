@@ -1,23 +1,36 @@
 <section>
-  <h2>users {{#link-to 'user.add'}}Add User{{/link-to}}</h2>
-  {{money 250}}
-  <table width="100%" border="1">
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Action</th>
-    </tr>
-    {{#each model as |user|}}
-      <tr>
-        <td>{{user.name}}</td>
-        <td>{{user.age}}</td>
-        <td>
-          <a href="javascript:;" {{action "editUser" user}}>Edit</a>
-          <a href="javascript:;" {{action "deleteUser" user}}>Delete</a>
-        </td>
-      </tr>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      users {{#link-to 'user.add' class="btn btn-xs btn-primary"}}Add User{{/link-to}}
+    </div>
+    <div class="panel-body">
+      <table class="table" width="100%" border="1">
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Action</th>
+        </tr>
+        {{#each model as |user|}}
+          <tr>
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>
+              <a href="javascript:;" {{action "editUser" user}}>Edit</a>
+              <a href="javascript:;" {{action "deleteUser" user}}>Delete</a>
+            </td>
+          </tr>
 
-    {{/each}}
-  </table>
-{{#action-bar actionName="add User"}}{{/action-bar}}
+        {{/each}}
+      </table>
+    </div>
+  </div>
+{{!--
+  {{money 250}} --}}
+{{log dialogShow}}
+{{dialog-confirm
+  show=dialogShow
+  okText="Ok"
+  text="是否确定删除当前行"
+  cancelText="No"
+  sureCallback=(action "sureDeleteUser" deleteUserTemp) }}
 </section>
